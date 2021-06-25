@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "name": "uasoft-indonesia/badaso-mongodb-module",
+  "description": "Use mongodb on badaso out of the box",
+  "keywords": [
+    "laravel",
+    "admin",
+    "panel",
+    "dashboard",
+    "pwa",
+    "vue",
+    "generator",
+    "blog",
+    "badaso",
+    "mongodb"
+  ],
+  "license": "proprietry",
+  "homepage": "https://badaso.uatech.co.id/",
+  "support": {
+    "issues": "https://github.com/uasoft-indonesia/badaso-mongodb-module/issues",
+    "discussion": "https://github.com/uasoft-indonesia/badaso-mongodb-module/discussions",
+    "source": "https://github.com/uasoft-indonesia/badaso-mongodb-module"
+  },
+  "type": "library",
+  "require": {
+    "jenssegers/mongodb": "^3.8"
+  },
+  "authors": [
+    {
+      "name": "UASOFT",
+      "email": "hello@uatech.co.id"
+    }
+  ],
+  "minimum-stability": "alpha",
+  "autoload": {
+    "psr-4": {
+      "Uasoft\\Badaso\\Module\\Mongodb\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Uasoft\\Badaso\\Module\\Mongodb\\Providers\\BadasoMongodbModuleServiceProvider"
+      ]
+    }
+  }
+}

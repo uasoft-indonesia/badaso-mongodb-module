@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Seeders\Badaso\MongodbManualGenerate;
+
+use Illuminate\Database\Seeder;
+use Uasoft\Badaso\Facades\Badaso;
+use MongoDB;
+
+class {{class}} extends Seeder
+{
+	/**
+	* Auto generated seed file
+	*
+	* @return void
+	*
+	* @throws Exception
+	*/
+	public function run()
+	{
+		$session = \DB::connection('mongodb')->getMongoClient()->startSession();
+        $session->startTransaction();
+
+		try {
+			\DB::connection('mongodb')->collection('{{collection}}')->delete();
+
+			{{insert_statements}}
+
+			$session->commitTransaction();
+		} catch(Exception $e) {
+			throw new Exception('Exception occur ' . $e);
+			$session->abortTransaction();
+			return false;
+		}
+	}
+}
